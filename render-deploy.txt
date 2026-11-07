@@ -1,0 +1,12 @@
+RENDER DEPLOYMENT
+1. Upload/push the extracted diwali-sky folder to a GitHub repository.
+2. Render → New + → Blueprint → connect repository.
+3. Render reads render.yaml automatically.
+4. Wait for build and open the generated onrender.com URL.
+
+Manual settings:
+Runtime: Node
+Build: npm install && npm run build
+Start: npm start
+Health check: /health
+Node: 20+

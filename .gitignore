@@ -1,0 +1,19 @@
+node_modules/
+client/node_modules/
+client/dist/
+.env
+.DS_Store
+*.log
+
+# Local dependencies and generated builds
+node_modules/
+client/node_modules/
+client/dist/
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log

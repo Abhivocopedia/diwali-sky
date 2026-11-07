@@ -1,0 +1,33 @@
+{
+  "name": "diwali-sky",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A cinematic, interactive Diwali fireworks experience built with React and Node.js.",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently \"pnpm run dev:server\" \"pnpm run dev:client\"",
+    "dev:server": "node --watch server.js",
+    "dev:client": "vite --host 0.0.0.0",
+    "build": "pnpm run build:client",
+    "build:client": "vite build --config client/vite.config.js",
+    "start": "node server.js",
+    "check": "node --check server.js"
+  },
+  "dependencies": {
+    "compression": "^1.7.4",
+    "express": "^4.21.2",
+    "grand-fireworks-js": "github:travisjmac/grand-fireworks-js#v1.10.0",
+    "helmet": "^8.1.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.7.0",
+    "concurrently": "^9.2.1",
+    "vite": "^6.3.5"
+  },
+  "engines": {
+    "node": ">=20 <25"
+  },
+  "packageManager": "pnpm@9.15.9"
+}
