@@ -3,9 +3,10 @@ services:
     name: diwali-sky
     runtime: node
     plan: free
-    buildCommand: npm install && npm run build
-    startCommand: npm start
+    region: singapore
+    buildCommand: corepack pnpm install --frozen-lockfile && corepack pnpm build
+    startCommand: corepack pnpm start
     healthCheckPath: /health
     envVars:
       - key: NODE_VERSION
-        value: 20
+        value: "24.22.1"
