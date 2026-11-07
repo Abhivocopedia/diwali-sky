@@ -8,11 +8,21 @@ export default defineConfig({
   build: {
     outDir: "dist",
     emptyOutDir: true,
-    sourcemap: false
+    sourcemap: false,
+    chunkSizeWarningLimit: 900,
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (id.includes("/node_modules/three/")) return "three-vendor";
+          if (id.includes("/node_modules/@react-three/") || id.includes("/node_modules/postprocessing/")) return "r3f-vendor";
+          if (id.includes("/node_modules/react-dom/") || id.includes("/node_modules/react/")) return "react-vendor";
+        },
+      },
+    },
   },
   server: {
     host: "0.0.0.0",
     port: 5173,
-    strictPort: true
-  }
+    strictPort: true,
+  },
 });

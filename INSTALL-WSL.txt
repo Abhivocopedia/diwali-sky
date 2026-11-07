@@ -1,0 +1,31 @@
+WSL INSTALL — QUALITY REBUILD
+
+Downloads:
+  /mnt/c/users/abhinandan bhatta/Downloads/diwali-sky-quality-upgrade.tar.gz
+
+Project root:
+  /mnt/c/users/abhinandan bhatta/abhi codes/Diwali
+
+Run in WSL:
+
+set -e
+PROJECT="/mnt/c/users/abhinandan bhatta/abhi codes/Diwali"
+ARCHIVE="/mnt/c/users/abhinandan bhatta/Downloads/diwali-sky-quality-upgrade.tar.gz"
+cd "$PROJECT"
+export PATH="$HOME/.local/bin:$PATH"
+test -f "$ARCHIVE"
+tar -xzf "$ARCHIVE" --strip-components=1 -C "$PROJECT"
+node apply-upgrade.mjs
+pnpm install
+pnpm run check
+pnpm build
+test -f client/dist/index.html
+pnpm start
+
+Open http://localhost:10000. Click the central diya and review the complete sequence before pushing.
+
+After local interaction testing passes:
+  git status --short
+  git add -A
+  git commit -m "Rebuild Diwali Sky courtyard and 3D interactions"
+  git push origin main
