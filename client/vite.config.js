@@ -9,16 +9,7 @@ export default defineConfig({
     outDir: "dist",
     emptyOutDir: true,
     sourcemap: false,
-    chunkSizeWarningLimit: 900,
-    rollupOptions: {
-      output: {
-        manualChunks(id) {
-          if (id.includes("/node_modules/three/")) return "three-vendor";
-          if (id.includes("/node_modules/@react-three/") || id.includes("/node_modules/postprocessing/")) return "r3f-vendor";
-          if (id.includes("/node_modules/react-dom/") || id.includes("/node_modules/react/")) return "react-vendor";
-        },
-      },
-    },
+    minify: "esbuild",
   },
   server: {
     host: "0.0.0.0",

@@ -18,10 +18,7 @@
     "express": "^4.21.2",
     "helmet": "^8.1.0",
     "react": "^19.1.0",
-    "react-dom": "^19.1.0",
-    "three": "0.187.0",
-    "@react-three/fiber": "9.8.2",
-    "@react-three/postprocessing": "3.2.2"
+    "react-dom": "^19.1.0"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.7.0",
